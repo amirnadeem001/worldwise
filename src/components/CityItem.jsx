@@ -5,7 +5,6 @@ import useCities from "../context/citiescontext";
 /* eslint-disable */
 
 function CityItem({ city }) {
-  console.log(city.position);
   const date = new Date(city.date);
 
   const { currentCity, deleteCity } = useCities();

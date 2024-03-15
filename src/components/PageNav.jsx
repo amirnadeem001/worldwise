@@ -3,7 +3,6 @@ import style from "../components/PageNav.module.css";
 import Logo from "./Logo";
 
 function PageNav() {
-  console.log(window.location.pathname);
   return (
     <nav className={style.nav}>
       <Link to="/">

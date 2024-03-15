@@ -27,7 +27,6 @@ function Map() {
 
   const [lat, lng] = useURLPosition();
 
-  console.log(lat, lng);
   useEffect(() => {
     if (lat && lng) setMapPosition([lat, lng]);
   }, [lat, lng]);
@@ -81,9 +80,7 @@ const DetectClick = () => {
   const navigate = useNavigate();
   useMapEvents({
     click: (e) => {
-      console.log(e);
       navigate(`form?&lat=${e.latlng.lat}&lang=${e.latlng.lng}`);
-      console.log(e);
     },
   });
 };

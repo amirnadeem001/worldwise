@@ -49,13 +49,10 @@ const CitiesProvider = ({ children }) => {
       try {
         const response = await fetch(`${BASE_URL}/cities`);
         const data = await response.json();
-        console.log(data);
         dispatch({ type: "cities/loaded", payload: data });
 
         if (!response.ok) throw new Error();
-      } catch (err) {
-        console.error(err);
-      }
+      } catch (err) {}
     }
     fetchData();
   }, []);
@@ -70,9 +67,7 @@ const CitiesProvider = ({ children }) => {
       dispatch({ type: "current_city", payload: data });
 
       if (!response.ok) throw new Error();
-    } catch (err) {
-      console.error(err.message);
-    }
+    } catch (err) {}
   };
   const createCity = async (newCity) => {
     dispatch({ type: "loading" });
@@ -87,9 +82,7 @@ const CitiesProvider = ({ children }) => {
       dispatch({ type: "city/created", payload: data });
 
       if (!response.ok) throw new Error();
-    } catch (err) {
-      console.error(err);
-    }
+    } catch (err) {}
   };
   const deleteCity = async (id) => {
     dispatch({ type: "loading" });
@@ -101,9 +94,7 @@ const CitiesProvider = ({ children }) => {
       dispatch({ type: "city/deleted", payload: id });
 
       if (!response.ok) throw new Error();
-    } catch (err) {
-      console.error(err);
-    }
+    } catch (err) {}
   };
 
   return (
